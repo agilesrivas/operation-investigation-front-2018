@@ -1,0 +1,63 @@
+button.__button,
+a.__button,
+input[type="submit"].__button {
+  outline: none;
+  border: none;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  padding: .5rem;
+  transition-duration: .3s;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+}
+.__button:disabled:hover {
+  cursor: not-allowed;
+}
+.__button.__button-rounded { 
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  border-radius: 500px; 
+}
+.__button.__button-primary {
+  color: white;
+  background-color: rgb(17, 0, 255);
+}
+.__button.__button-primary:hover {
+  background-color: rgb(16, 0, 236);
+}
+.__button.__button-secondary {
+  color: white;
+  background-color: rgb(161, 161, 161);
+}
+.__button.__button-secondary:hover {
+  background-color: rgb(146, 146, 146);
+}
+.__button.__button-success {
+  color: white;
+  background-color: rgb(13, 201, 0);
+}
+.__button.__button-success:hover {
+  background-color: rgb(12, 177, 0);
+}
+.__button.__button-danger {
+  color: white;
+  background-color: rgb(255, 17, 0);
+}
+.__button.__button-danger:hover {
+  background-color: rgb(240, 16, 0);
+}
+.__button.__button-danger:disabled {
+  background-color: rgb(211, 14, 0);
+}
+.__button.__button-warning {
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 126, 0);
+}
+.__button.__button-warning:hover {
+  background-color: rgb(231, 116, 0);
+}
+.__button.__button-link {
+  color: rgb(69, 69, 250);
+  text-decoration: none;
+}

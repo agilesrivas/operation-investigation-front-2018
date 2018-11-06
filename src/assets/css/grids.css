@@ -1,0 +1,149 @@
+.__row, .__row > .__col {
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+}
+.__row {
+  width: 100%;
+  margin: 0;
+  padding: .25vmin;
+  
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-direction: wrap;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.__row > .__col { width: 100% !important; padding: .75vmin; }
+.__row > .__col.__col-10{ width: 100% !important; }
+.__row > .__col.__col-9{ width: 90% !important; }
+.__row > .__col.__col-8{ width: 80% !important; }
+.__row > .__col.__col-7{ width: 70% !important; }
+.__row > .__col.__col-6{ width: 60% !important; }
+.__row > .__col.__col-5{ width: 50% !important; }
+.__row > .__col.__col-4{ width: 40% !important; }
+.__row > .__col.__col-3{ width: 30% !important; }
+.__row > .__col.__col-2{ width: 20% !important; }
+.__row > .__col.__col-1{ width: 10% !important; }
+.__row > .__col.__col-offset-9{ margin-left: 90% !important; }
+.__row > .__col.__col-offset-8{ margin-left: 80% !important; }
+.__row > .__col.__col-offset-7{ margin-left: 70% !important; }
+.__row > .__col.__col-offset-6{ margin-left: 60% !important; }
+.__row > .__col.__col-offset-5{ margin-left: 50% !important; }
+.__row > .__col.__col-offset-4{ margin-left: 40% !important; }
+.__row > .__col.__col-offset-3{ margin-left: 30% !important; }
+.__row > .__col.__col-offset-2{ margin-left: 20% !important; }
+.__row > .__col.__col-offset-1{ margin-left: 10% !important; }
+
+@media screen and (min-width: 426px) {
+  .__row > .__col.__col-sm-10{ width: 100% !important; }
+  .__row > .__col.__col-sm-9{ width: 90% !important; }
+  .__row > .__col.__col-sm-8{ width: 80% !important; }
+  .__row > .__col.__col-sm-7{ width: 70% !important; }
+  .__row > .__col.__col-sm-6{ width: 60% !important; }
+  .__row > .__col.__col-sm-5{ width: 50% !important; }
+  .__row > .__col.__col-sm-4{ width: 40% !important; }
+  .__row > .__col.__col-sm-3{ width: 30% !important; }
+  .__row > .__col.__col-sm-2{ width: 20% !important; }
+  .__row > .__col.__col-sm-1{ width: 10% !important; }
+	.__row > .__col.__col-offset-sm-9{ margin-left: 90% !important; }
+	.__row > .__col.__col-offset-sm-8{ margin-left: 80% !important; }
+	.__row > .__col.__col-offset-sm-7{ margin-left: 70% !important; }
+	.__row > .__col.__col-offset-sm-6{ margin-left: 60% !important; }
+	.__row > .__col.__col-offset-sm-5{ margin-left: 50% !important; }
+	.__row > .__col.__col-offset-sm-4{ margin-left: 40% !important; }
+	.__row > .__col.__col-offset-sm-3{ margin-left: 30% !important; }
+	.__row > .__col.__col-offset-sm-2{ margin-left: 20% !important; }
+	.__row > .__col.__col-offset-sm-1{ margin-left: 10% !important; }
+}
+
+@media screen and (min-width: 769px) {
+  .__row > .__col.__col-md-10{ width: 100% !important; }
+  .__row > .__col.__col-md-9{ width: 90% !important; }
+  .__row > .__col.__col-md-8{ width: 80% !important; }
+  .__row > .__col.__col-md-7{ width: 70% !important; }
+  .__row > .__col.__col-md-6{ width: 60% !important; }
+  .__row > .__col.__col-md-5{ width: 50% !important; }
+  .__row > .__col.__col-md-4{ width: 40% !important; }
+  .__row > .__col.__col-md-3{ width: 30% !important; }
+  .__row > .__col.__col-md-2{ width: 20% !important; }
+  .__row > .__col.__col-md-1{ width: 10% !important; }
+  .__row > .__col.__col-offset-md-9{ margin-left: 90% !important; }
+  .__row > .__col.__col-offset-md-8{ margin-left: 80% !important; }
+  .__row > .__col.__col-offset-md-7{ margin-left: 70% !important; }
+  .__row > .__col.__col-offset-md-6{ margin-left: 60% !important; }
+  .__row > .__col.__col-offset-md-5{ margin-left: 50% !important; }
+  .__row > .__col.__col-offset-md-4{ margin-left: 40% !important; }
+  .__row > .__col.__col-offset-md-3{ margin-left: 30% !important; }
+  .__row > .__col.__col-offset-md-2{ margin-left: 20% !important; }
+  .__row > .__col.__col-offset-md-1{ margin-left: 10% !important; }
+}
+
+@media screen and (min-width: 1025px) {
+  .__row > .__col.__col-lg-10{ width: 100% !important; }
+  .__row > .__col.__col-lg-9{ width: 90% !important; }
+  .__row > .__col.__col-lg-8{ width: 80% !important; }
+  .__row > .__col.__col-lg-7{ width: 70% !important; }
+  .__row > .__col.__col-lg-6{ width: 60% !important; }
+  .__row > .__col.__col-lg-5{ width: 50% !important; }
+  .__row > .__col.__col-lg-4{ width: 40% !important; }
+  .__row > .__col.__col-lg-3{ width: 30% !important; }
+  .__row > .__col.__col-lg-2{ width: 20% !important; }
+  .__row > .__col.__col-lg-1{ width: 10% !important; }
+  .__row > .__col.__col-offset-lg-9{margin-left: 90% !important; }
+  .__row > .__col.__col-offset-lg-8{margin-left: 80% !important; }
+  .__row > .__col.__col-offset-lg-7{margin-left: 70% !important; }
+  .__row > .__col.__col-offset-lg-6{margin-left: 60% !important; }
+  .__row > .__col.__col-offset-lg-5{margin-left: 50% !important; }
+  .__row > .__col.__col-offset-lg-4{margin-left: 40% !important; }
+  .__row > .__col.__col-offset-lg-3{margin-left: 30% !important; }
+  .__row > .__col.__col-offset-lg-2{margin-left: 20% !important; }
+  .__row > .__col.__col-offset-lg-1{margin-left: 10% !important; }
+}
+
+@media screen and (min-width: 1441px) {
+  .__row > .__col.__col-xl-10{ width: 100% !important; }
+  .__row > .__col.__col-xl-9{ width: 90% !important; }
+  .__row > .__col.__col-xl-8{ width: 80% !important; }
+  .__row > .__col.__col-xl-7{ width: 70% !important; }
+  .__row > .__col.__col-xl-6{ width: 60% !important; }
+  .__row > .__col.__col-xl-5{ width: 50% !important; }
+  .__row > .__col.__col-xl-4{ width: 40% !important; }
+  .__row > .__col.__col-xl-3{ width: 30% !important; }
+  .__row > .__col.__col-xl-2{ width: 20% !important; }
+  .__row > .__col.__col-xl-1{ width: 10% !important; }
+  .__row > .__col.__col-offset-xl-9{ margin-left: 90% !important; }
+  .__row > .__col.__col-offset-xl-8{ margin-left: 80% !important; }
+  .__row > .__col.__col-offset-xl-7{ margin-left: 70% !important; }
+  .__row > .__col.__col-offset-xl-6{ margin-left: 60% !important; }
+  .__row > .__col.__col-offset-xl-5{ margin-left: 50% !important; }
+  .__row > .__col.__col-offset-xl-4{ margin-left: 40% !important; }
+  .__row > .__col.__col-offset-xl-3{ margin-left: 30% !important; }
+  .__row > .__col.__col-offset-xl-2{ margin-left: 20% !important; }
+  .__row > .__col.__col-offset-xl-1{ margin-left: 10% !important; }
+}
+
+@media screen and (min-width: 2561px) {
+  .__row > .__col.__col-4k-10{ width: 100% !important; }
+  .__row > .__col.__col-4k-9{ width: 90% !important; }
+  .__row > .__col.__col-4k-8{ width: 80% !important; }
+  .__row > .__col.__col-4k-7{ width: 70% !important; }
+  .__row > .__col.__col-4k-6{ width: 60% !important; }
+  .__row > .__col.__col-4k-5{ width: 50% !important; }
+  .__row > .__col.__col-4k-4{ width: 40% !important; }
+  .__row > .__col.__col-4k-3{ width: 30% !important; }
+  .__row > .__col.__col-4k-2{ width: 20% !important; }
+  .__row > .__col.__col-4k-1{ width: 10% !important; }
+  .__row > .__col.__col-offset-4k-9{ margin-left: 90% !important; }
+  .__row > .__col.__col-offset-4k-8{ margin-left: 80% !important; }
+  .__row > .__col.__col-offset-4k-7{ margin-left: 70% !important; }
+  .__row > .__col.__col-offset-4k-6{ margin-left: 60% !important; }
+  .__row > .__col.__col-offset-4k-5{ margin-left: 50% !important; }
+  .__row > .__col.__col-offset-4k-4{ margin-left: 40% !important; }
+  .__row > .__col.__col-offset-4k-3{ margin-left: 30% !important; }
+  .__row > .__col.__col-offset-4k-2{ margin-left: 20% !important; }
+  .__row > .__col.__col-offset-4k-1{ margin-left: 10% !important; }
+}

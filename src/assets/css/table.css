@@ -1,0 +1,122 @@
+table.__table {
+  border-spacing: 0;
+}
+table.__table tr > th,
+table.__table tr > td,
+table.__table > caption {
+  padding: .5rem;
+}
+
+table.__table > caption {
+  border-top: 1px solid rgb(31, 28, 28);
+  background-color: rgb(31, 28, 28);
+  border-color: rgb(31, 28, 28) !important;
+  color: rgb(255, 255, 255);
+
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  font-weight: 600;
+}
+table.__table > thead > tr > th,
+table.__table > thead > tr > td,
+table.__table > tfoot > tr > th,
+table.__table > tfoot > tr > td {
+  border-top: 1px solid rgb(197, 197, 197);
+  border-bottom: 1px solid rgb(197, 197, 197);
+}
+
+table.__table.__table-bordered tr > th,
+table.__table.__table-bordered tr > td, 
+table.__table.__table-bordered > caption,
+table.__table.__table-bordered-vertical tr > th,
+table.__table.__table-bordered-vertical tr > td,
+table.__table.__table-bordered-vertical > caption {
+  border-left: 1px solid rgb(197, 197, 197);
+}
+table.__table.__table-bordered > tr > th,
+table.__table.__table-bordered > tr > td,
+table.__table.__table-bordered > tbody > tr > th,
+table.__table.__table-bordered > tbody > tr > td,
+table.__table.__table-bordered-horizontal > tr > th,
+table.__table.__table-bordered-horizontal > tr > td,
+table.__table.__table-bordered-horizontal > tbody > tr > th,
+table.__table.__table-bordered-horizontal > tbody > tr > td  {
+  border-bottom: 1px solid rgb(197, 197, 197);
+}
+table.__table.__table-bordered > tfoot > tr > th,
+table.__table.__table-bordered > tfoot > tr > td,
+table.__table.__table-bordered-horizontal > tfoot > tr > th,
+table.__table.__table-bordered-horizontal > tfoot > tr > td {
+  border-bottom: 1px solid rgb(197, 197, 197);
+}
+table.__table.__table-bordered > tr > th:nth-last-child(1),
+table.__table.__table-bordered > tr > td:nth-last-child(1),
+table.__table.__table-bordered > thead > tr > th:nth-last-child(1),
+table.__table.__table-bordered > thead > tr > td:nth-last-child(1),
+table.__table.__table-bordered > tbody > tr > th:nth-last-child(1),
+table.__table.__table-bordered > tbody > tr > td:nth-last-child(1),
+table.__table.__table-bordered > tfoot > tr > th:nth-last-child(1),
+table.__table.__table-bordered > tfoot > tr > td:nth-last-child(1),
+table.__table.__table-bordered > caption,
+table.__table.__table-bordered-vertical > tr > th:nth-last-child(1),
+table.__table.__table-bordered-vertical > tr > td:nth-last-child(1),
+table.__table.__table-bordered-vertical > thead > tr > th:nth-last-child(1),
+table.__table.__table-bordered-vertical > thead > tr > td:nth-last-child(1),
+table.__table.__table-bordered-vertical > tbody > tr > th:nth-last-child(1),
+table.__table.__table-bordered-vertical > tbody > tr > td:nth-last-child(1),
+table.__table.__table-bordered-vertical > tfoot > tr > th:nth-last-child(1),
+table.__table.__table-bordered-vertical > tfoot > tr > td:nth-last-child(1),
+table.__table.__table-bordered-vertical > caption {
+  border-right: 1px solid rgb(197, 197, 197);
+}
+table.__table.__table-bordered > tr:nth-last-child(1) > th,
+table.__table.__table-bordered > tr:nth-last-child(1) > td,
+table.__table.__table-bordered > tbody > tr:nth-last-child(1) > th,
+table.__table.__table-bordered > tbody > tr:nth-last-child(1) > td,
+table.__table.__table-bordered-horizontal > tr:nth-last-child(1) > th,
+table.__table.__table-bordered-horizontal > tr:nth-last-child(1) > td,
+table.__table.__table-bordered-horizontal > tbody > tr:nth-last-child(1) > th,
+table.__table.__table-bordered-horizontal > tbody > tr:nth-last-child(1) > td  {
+  border-bottom: none;
+}
+
+table.__table tr,
+table.__table.__table-primary tr {
+  color: rgb(0, 0, 0);
+  transition-duration: .3s;
+}
+table.__table > thead > tr,
+table.__table > tfoot > tr,
+table.__table.__table-primary > thead > tr,
+table.__table.__table-primary > tfoot > tr {
+  background-color: rgb(223, 223, 223);
+}
+table.__table > tbody > tr,
+table.__table > tr,
+table.__table.__table-primary > tbody > tr,
+table.__table.__table-primary > tr {
+  background-color: rgb(255, 255, 255);
+}
+table.__table.__table-hoverrable > tbody > tr:hover,
+table.__table.__table-primary.__table-hoverrable > tbody > tr:hover {
+  background-color: rgb(255, 255, 190);
+}
+
+table.__table.__table-secondary tr {
+  color: white;
+}
+table.__table.__table-secondary > caption {
+  border-color: rgb(197, 197, 197) !important;
+}
+table.__table.__table-secondary > thead > tr,
+table.__table.__table-secondary > tfoot > tr {
+  background-color: rgb(32, 32, 32);
+}
+table.__table.__table-secondary > tbody > tr,
+table.__table.__table-secondary > tr {
+  background-color: rgb(46, 43, 43);
+}
+table.__table.__table-secondary.__table-hoverrable > tbody > tr:hover {
+  background-color: rgb(68, 62, 62);
+}

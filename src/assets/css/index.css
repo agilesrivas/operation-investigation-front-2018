@@ -1,0 +1,13 @@
+body {
+  background-image: url('./../images/efbd02590b3f438ea531ffde8b8ef63d.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.__loading-container {
+  font-size: 2.5rem;
+  font-family: 'shink';
+}
+@font-face {
+  font-family: 'shink';
+  src: url('../webfonts/shink.otf');
+}
