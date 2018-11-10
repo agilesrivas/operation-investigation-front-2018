@@ -12,5 +12,5 @@ public interface CrudController<T> {
     public ResponseEntity update(@RequestBody T value );
     public ResponseEntity delete(@RequestParam Long value );
     public ResponseEntity getById(@RequestParam Long value );
-    public  ResponseEntity<List<T>> getAll();
+    public  ResponseEntity <List<T>> getAll();
 }

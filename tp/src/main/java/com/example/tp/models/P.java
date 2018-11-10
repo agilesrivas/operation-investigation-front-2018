@@ -37,6 +37,8 @@ public class P {
     private double R; //Punto de un nuevo pedid
     @Column(name = "L",nullable = true)
     private double L ;// Plazo de reposición
+    @Column(name = "plazo_reposicion",nullable = true)
+    private double plazo_reposicion ;// Plazo de reposición
     @Column(name = "H",nullable = true)
     private double H;    //Costo  anual  de  mantenimiento  y  de  almacenamiento  por  unidad  del  inventario promedio
     @Column(name = "T",nullable = true)

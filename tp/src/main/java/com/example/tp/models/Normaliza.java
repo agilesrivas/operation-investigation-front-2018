@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@Table(name = "normalization")
+@Table(name = "normalizaciones")
 @Entity
 @NoArgsConstructor
 public class Normaliza {

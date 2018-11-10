@@ -19,7 +19,7 @@ public class Product {
     @JoinColumn(name = "id_category", nullable = false)
     @OneToOne(fetch = FetchType.EAGER)
     private Category category;
-    @JoinColumn(name = "id_provideer", nullable = false)
+    @JoinColumn(name = "id_provideer", nullable = true)
     @OneToOne(fetch = FetchType.EAGER)
     private Provideer provideer;
     @Column(name="name",nullable = false)
@@ -49,6 +49,15 @@ public class Product {
     public Product (Category category,Provideer provideer,String name,String code,double amount,double cost,int current,int reorder){
         this.category=category;
         this.provideer=provideer;
+        this.name=name;
+        this.code=code;
+        this.amount=amount;
+        this.cost=cost;
+        this.currentAmount=current;
+        this.reorder_point=reorder;
+    }
+    public Product (Category category,String name,String code,double amount,double cost,int current,int reorder){
+        this.category=category;
         this.name=name;
         this.code=code;
         this.amount=amount;

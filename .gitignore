@@ -1,5 +1,34 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+tp/nbproject/private/
+tp/build/
+tp/nbbuild/
+tp/dist/
+tp/nbdist/
+tp/.nb-gradle/
+
+
+
+
 .DS_Store
-node_modules
+Stock-Verdulin/node_modules
 /dist
 
 # local env files
@@ -10,12 +39,3 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw*
