@@ -4,6 +4,7 @@ import ProductView from '@/views/ProductView'
 import ProviderView from '@/views/ProviderView'
 import SalesView from '@/views/SalesView'
 import ModelsView from '@/views/ModelsView'
+import ConfigView from '@/views/ConfigView'
 
 const routes = [
   {
@@ -35,6 +36,11 @@ const routes = [
     path: '/sales',
     name: 'sales',
     component: SalesView
+  },
+  {
+    path: '/config',
+    name: 'config',
+    component: ConfigView
   }
 ]
 

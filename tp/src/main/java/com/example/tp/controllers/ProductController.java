@@ -4,10 +4,8 @@ package com.example.tp.controllers;
 import ch.qos.logback.core.net.SyslogOutputStream;
 import com.example.tp.interfaces.CrudController;
 import com.example.tp.interfaces.Normalization;
-import com.example.tp.models.Normaliza;
-import com.example.tp.models.P;
-import com.example.tp.models.Product;
-import com.example.tp.models.Q;
+import com.example.tp.models.*;
+import com.example.tp.repositories.ConfigRepository;
 import com.example.tp.repositories.P_Repository;
 import com.example.tp.repositories.Q_Repository;
 import com.example.tp.services.ProductService;
@@ -33,6 +31,8 @@ public class ProductController implements CrudController<Product> {
     protected Q_Repository q_repository;
     @Autowired
     protected Normalization normalization;
+    @Autowired
+    protected ConfigRepository config;
 
     @GetMapping(value="/all/p")
     public ResponseEntity All_P(){
@@ -61,7 +61,7 @@ public class ProductController implements CrudController<Product> {
         ResponseEntity status=new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         try{
             if(value!=null && value instanceof Product){
-
+                Config conf=this.config.getOne((long) 1);
                 Product product=this.productService.create(value);
                 Q ob2=this.q_repository.getByProduct(value.getId());
                 Q model_q=null;
@@ -70,19 +70,25 @@ public class ProductController implements CrudController<Product> {
                 if(product.getProvideer()!=null && product.getProvideer().getLeadtime()>0 )
                 {
                    model_p=new P(product);
-                   model_p.setD(product.getCurrentAmount()*365);
+                   model_p.setD(product.getCurrentAmount()*conf.getDiasLaborales());
                     model_p.setC(product.getCost());
                     model_p.setDr(product.getCurrentAmount());
-                    model_p.setH((product.getAmount()*0.8)/100);
-                    model_p.setL(1);
-                    model_p.setS((product.getAmount()*0.8)/100);
+                    model_p.setH((product.getAmount()*conf.getCostoMantenimiento())/100);
+                    model_p.setL(conf.getDiasDeCompras());
+                    model_p.setS((product.getAmount()*conf.getCostoVenta())/100);
                     model_p.setR(model_p.getDr()*model_p.getL());
                     model_p.setT(product.getProvideer().getLeadtime());
                     model_p.setI(product.getCurrentAmount());
-                    model_p.setP(0.9);
+                    model_p.setP(conf.getPorcentajeServicio());
+                    model_p.setDes_d(1);
+                    model_p.setDes_t_l(Math.sqrt(model_p.getT()+model_p.getL())*model_p.getDes_d());
+
+                    model_p.setE_z(((model_p.getDr()*model_p.getT())*(1-model_p.getP()))/model_p.getDes_t_l());
+                    model_p.setQ(model_p.getDr()*(model_p.getT()+model_p.getL()) + (model_p.getZ()*model_p.getDes_t_l()) - model_p.getI());
                     Normaliza normModel=this.normalization.getByZ(model_p.getE_z());
                     if(normModel !=null){
                         model_p.setZ(normModel.getZ());
+                        model_p.setZ_des_t_l(model_p.getZ()*model_p.getDes_t_l());
                     }else{
                         List<Normaliza> normalizations=this.normalization.findAll();
                         int i=0;
@@ -104,23 +110,20 @@ public class ProductController implements CrudController<Product> {
 
                     }
 
-                    model_p.setDes_d(2);
-                    model_p.setDes_t_l(Math.sqrt(model_p.getT()+model_p.getL())*model_p.getDes_d());
-                    model_p.setE_z(((model_p.getDr()*model_p.getT())*(1-model_p.getP())/model_p.getDes_t_l()));
-                    model_p.setQ(model_p.getDr()*(model_p.getT()+model_p.getL()) + (model_p.getZ()*model_p.getDes_t_l()) - model_p.getI());
+
 
                     this.p_repository.save(model_p);
                     
                 }else{
                     model_q=new Q(product);
                     //demanda anul
-                    model_q.setD(product.getCurrentAmount()*365);
+                    model_q.setD(product.getCurrentAmount()*conf.getDiasLaborales());
                     model_q.setC(product.getCost());
                     model_q.setDr(product.getCurrentAmount());
-                    model_q.setH((product.getAmount()*0.8)/100);
-                    model_q.setL(1);
+                    model_q.setH((product.getAmount()*conf.getCostoMantenimiento())/100);
+                    model_q.setL(conf.getDiasDeCompras());
 
-                    model_q.setS((product.getAmount()*0.8)/100);
+                    model_q.setS((product.getAmount()*conf.getCostoVenta())/100);
                     model_q.setR(model_q.getDr()*model_q.getL());
                     model_q.setQ(Math.sqrt((2*model_q.getD()*model_q.getS())/model_q.getH()));
                     model_q.setTC((model_q.getD()*model_q.getC())+((model_q.getD()/model_q.getQ())*model_q.getS())+((model_q.getQ()/2)*model_q.getH()));
@@ -172,6 +175,7 @@ public class ProductController implements CrudController<Product> {
         ResponseEntity status=new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         try{
             if(value!=null && value instanceof Product){
+                Config conf=this.config.getOne((long) 1);
                 Q ob2=this.q_repository.getByProduct(value.getId());
                 P p_ob2=this.p_repository.getByProduct(value.getId());
 
@@ -180,12 +184,12 @@ public class ProductController implements CrudController<Product> {
                      if(p_ob2!=null){
                         if(product.getProvideer().getLeadtime()!=0 && product.getProvideer()!=null)
                         {
-                        p_ob2.setD((p_ob2.getStock().getCurrentAmount()+product.getCurrentAmount())*365);
+                        p_ob2.setD((p_ob2.getStock().getCurrentAmount()+product.getCurrentAmount())*conf.getDiasLaborales());
                         p_ob2.setC(product.getCost());
-                        p_ob2.setDr((p_ob2.getStock().getCurrentAmount()+product.getCurrentAmount())/365);
-                        p_ob2.setH((product.getAmount()*0.8)/100);
+                        p_ob2.setDr((p_ob2.getStock().getCurrentAmount()+product.getCurrentAmount())/conf.getDiasLaborales());
+                        p_ob2.setH((product.getAmount()*conf.getCostoMantenimiento())/100);
                         p_ob2.setL(1);
-                        p_ob2.setS((product.getAmount()*0.8)/100);
+                        p_ob2.setS((product.getAmount()*conf.getCostoVenta())/100);
                         p_ob2.setR(p_ob2.getDr()*p_ob2.getL());
                         p_ob2.setZ(p_ob2.getZ());
                         p_ob2.setT(product.getProvideer().getLeadtime());
@@ -201,13 +205,13 @@ public class ProductController implements CrudController<Product> {
                      }
                 if(ob2!=null){
                     //demanda anul
-                    ob2.setD((product.getCurrentAmount()+ob2.getProduct().getCurrentAmount())*365);
+                    ob2.setD((product.getCurrentAmount()+ob2.getProduct().getCurrentAmount())*conf.getDiasLaborales());
                     ob2.setC(product.getCost());
-                    ob2.setDr((product.getCurrentAmount()+ob2.getProduct().getCurrentAmount())/365);
-                    ob2.setH((product.getAmount()*0.8)/100);
+                    ob2.setDr((product.getCurrentAmount()+ob2.getProduct().getCurrentAmount())/conf.getDiasLaborales());
+                    ob2.setH((product.getAmount()*conf.getCostoMantenimiento())/100);
                     ob2.setL(ob2.getL());
                     ob2.setP(ob2.getP());
-                    ob2.setS((product.getAmount()*0.8)/100);
+                    ob2.setS((product.getAmount()*conf.getCostoVenta())/100);
                     ob2.setR(ob2.getDr()*ob2.getL());
                     ob2.setQ(Math.sqrt((2*ob2.getD()*ob2.getS())/ob2.getH()));
                     ob2.setTC((ob2.getD()*ob2.getC())+((ob2.getD()/ob2.getQ())*ob2.getS())+((ob2.getQ()/2)*ob2.getH()));

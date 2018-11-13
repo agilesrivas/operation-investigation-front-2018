@@ -145,7 +145,7 @@ export default {
 
         CategoryService.create(category)
           .then(resolve => {
-            this.success = resolve
+            this.success = "Se ha cargado Exitosamente"
           CategoryService.retrieveAll().then((response)=>{
               this.categories=response;
             }).catch((error)=>{

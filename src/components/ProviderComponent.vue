@@ -31,7 +31,7 @@
               <input id="provider_phone" type="text" required placeholder=" " v-model.number="phone">
             </div>
              <div class="__form-group">
-              <label for="provider_phone">Lead Time: </label>
+              <label for="provider_phone">Tiempo de Revision :T : </label>
               <input id="provider_phone" type="number" required placeholder=" " v-model.number="leadtime">
             </div>
           </div>

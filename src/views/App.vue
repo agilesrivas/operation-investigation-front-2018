@@ -11,9 +11,14 @@
 
 <template>
   <main id="app" class="__full-height-perc __overflow-hidden">
-    <router-link to="/" class="__button __button-link __button-rounded __to-home">
-      <i class="fas fa-home"></i>
-    </router-link>
+    <div class="__mininav">
+      <router-link to="/" class="__button __button-link __button-rounded __to-home">
+        <i class="fas fa-home"></i>
+      </router-link>
+      <router-link to="/config" class="__button __button-link __button-rounded __to-home">
+        <i class="fas fa-cogs"></i>
+      </router-link>
+    </div>
     <router-view></router-view>
   </main>
 </template>

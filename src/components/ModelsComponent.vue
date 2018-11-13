@@ -90,24 +90,26 @@
               <th><abbr title="Desviación estándar de la demanda durante la revisión y el plazo">z*σ(T+L)</abbr></th>
               <th><abbr title="Desviación estandar de la demanda">σd</abbr></th>
               <th><abbr title="Lead Time">L</abbr></th>
+
               <th>Costo anual Total</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(row, index) in models_p" :key="index">
-              <td>{{ row.product }}</td>
+              <td>{{ row.stock.name }}</td>
               <td>{{ row.i }} uni.</td>
-              <td>{{ row.daily_d }} uni.</td>
-              <td>{{ row.annual_D }} uni.</td>
+              <td>{{ row.dr }} uni.</td>
+              <td>{{ row.d }} uni.</td>
               <td>{{ row.q }} uni.</td>
               <td>{{ row.t }} días</td>
               <td>{{ row.p }}</td>
               <td>{{ row.z }}</td>
-              <td>{{ row.otl }}</td>
-              <td>{{ row.zotl }}</td>
-              <td>{{ row.od }}</td>
-              <td>{{ row.l }} días</td>
-              <td>${{ row.cta.toFixed(2) }}</td>
+              <td>{{ row.des_t_l }}</td>
+              <td>{{ row.z_des_t_l }}</td>
+              <td>{{ row.des_d }}</td>
+              <td>{{ row.stock.provideer.leadtime }} días</td>
+
+              <td>${{ row.tc }}</td>
             </tr>
           </tbody>
           <tfoot>
@@ -124,6 +126,7 @@
               <th><abbr title="Desviación estándar de la demanda durante la revisión y el plazo">z*σ(T+L)</abbr></th>
               <th><abbr title="Desviación estandar de la demanda">σd</abbr></th>
               <th><abbr title="Lead Time">L</abbr></th>
+
               <th>Costo anual Total</th>
             </tr>
           </tfoot>
@@ -169,7 +172,7 @@ export default {
       .then(resolve => {
         this.models = resolve
       })
-       ModelsService.retrieveAll()
+       ModelsService.All()
       .then(resolve => {
         this.models_p = resolve
       })

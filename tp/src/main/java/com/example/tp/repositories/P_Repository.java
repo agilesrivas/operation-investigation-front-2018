@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface P_Repository extends JpaRepository<P,Long> {
-    @Query(value="SELECT * FROM P q WHERE q.id_product = :id",nativeQuery = true)
+    @Query(value="SELECT * FROM model_p q WHERE q.id_product = :id",nativeQuery = true)
     public P getByProduct(@Param("id")Long id);
 }
