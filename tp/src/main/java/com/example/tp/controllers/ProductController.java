@@ -85,6 +85,7 @@ public class ProductController implements CrudController<Product> {
 
                     model_p.setE_z(((model_p.getDr()*model_p.getT())*(1-model_p.getP()))/model_p.getDes_t_l());
                     model_p.setQ(model_p.getDr()*(model_p.getT()+model_p.getL()) + (model_p.getZ()*model_p.getDes_t_l()) - model_p.getI());
+                    System.out.println(model_p.getE_z());
                     Normaliza normModel=this.normalization.getByZ(model_p.getE_z());
                     if(normModel !=null){
                         model_p.setZ(normModel.getZ());
